@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  vision:
+    build: .
+    container_name: ds-vision
+    restart: unless-stopped
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./models:/root/.insightface/models
+
+    networks:
+      - milvus
+
+networks:
+  milvus:
+    external: true
+    name: milvus
