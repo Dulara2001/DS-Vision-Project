@@ -1,4 +1,4 @@
-# 🎥 Multi-Camera People Counting System
+# 🎥 Multi-Camera Smart Visitor Tracking and Recognition System
 
 A real-time computer vision system that detects, tracks, and classifies people crossing a line across multiple camera feeds. Built with YOLO, ByteTrack, InsightFace, and FairFace. Results are stored in Milvus and published to Kafka.
 
